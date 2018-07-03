@@ -31,7 +31,7 @@ class HtmlWebpackImportCssPlugin {
      * @param {Function} cb
      */
     transform(data, cb) {
-        data.assets.css.forEach((name) => {
+        ((data.assets || {}).css || []).forEach((name) => {
             const pattern = new RegExp(`<link[^>]+href=['"]${name}['"][^>]+(>|\/>|><\/link>)`),
                 substitute = `<style type="text/css">@import url("${name}");</style>`;
 
