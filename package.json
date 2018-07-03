@@ -1,0 +1,35 @@
+{
+  "name": "html-webpack-import-css-plugin",
+  "version": "0.0.0",
+  "description": "A Webpack plugin to convert <link> tag to <style> tag with import stylesheet",
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izonder/html-webpack-import-css-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-plugin",
+    "import",
+    "css"
+  ],
+  "author": "izonder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/izonder/html-webpack-import-css-plugin/issues"
+  },
+  "homepage": "https://github.com/Runjuu/html-webpack-import-css-plugin#readme",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "devDependencies": {
+    "eslint-config-standard": "izonder/eslint-config-standard",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {
+    "camelize": "^1.0.0"
+  }
+}
