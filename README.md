@@ -1,7 +1,7 @@
 # html-webpack-import-css-plugin
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/izonder/html-webpack-import-css-plugin/pulls)
-[![npm version](https://badge.fury.io/js/html-webpack-import-css-plugin.svg)](https://badge.fury.io/js/html-webpack-import-css-plugin)
+[![Latest Stable Version](https://img.shields.io/npm/v/html-webpack-import-css-plugin.svg?style=flat-square)](https://opensource.org/licenses/mit-license.php)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/izonder/html-webpack-import-css-plugin/pulls)
+[![License](https://img.shields.io/npm/l/html-webpack-import-css-plugin.svg?style=flat-square)](https://badge.fury.io/js/html-webpack-import-css-plugin)
 
 Transform `LINK` tag to `STYLE` tag with import directive.
 
