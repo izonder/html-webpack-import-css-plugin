@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-import-css-plugin",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A Webpack plugin to convert <link> tag to <style> tag with import stylesheet",
   "main": "./index.js",
   "repository": {
