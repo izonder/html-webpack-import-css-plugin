@@ -7,7 +7,7 @@ class HtmlWebpackImportCssPlugin {
      */
     apply(compiler) {
         this.shim(compiler, 'compilation')((compilation) => { //eslint-disable-line
-            this.shim(compilation, 'html-webpack-plugin-after-html-processing')(this.transform);
+            this.shim(compilation, 'html-webpack-plugin-after-html-processing', false)(this.transform);
         });
     }
 
@@ -15,20 +15,23 @@ class HtmlWebpackImportCssPlugin {
      * Shim backward compatibility 3/4 versions
      * @param {*} target
      * @param {string} hook
+     * @param {boolean} sync
      * @returns {Function}
      */
-    shim(target, hook) {
-        const name = this.constructor.name;
+    shim(target, hook, sync = true) {
+        const name = this.constructor.name,
+            tap = sync ? 'tap' : 'tapAsync';
 
         return target.hooks ?
-            target.hooks[hook].tapAsync.bind(target.hooks[camelize(hook)], name) :  //webpack 4
-            target.plugin.bind(target, hook);                                       //webpack 3
+            target.hooks[camelize(hook)][tap].bind(target.hooks[camelize(hook)], name) :    //webpack 4
+            target.plugin.bind(target, hook);                                               //webpack 3
     }
 
     /**
      * Transform HTML
      * @param {*} data
      * @param {Function} cb
+     * @returns {*}
      */
     transform(data, cb) {
         ((data.assets || {}).css || []).forEach((name) => {
@@ -38,7 +41,7 @@ class HtmlWebpackImportCssPlugin {
             data.html = data.html.replace(pattern, substitute);
         });
 
-        cb(null, data);
+        return (typeof cb === 'function') && cb(null, data);
     }
 }
 
